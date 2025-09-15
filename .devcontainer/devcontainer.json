@@ -1,0 +1,50 @@
+{
+    "name": "Codespaces for Laravel Dev",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "forwardPorts": [8080, 3306],
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "nodeGypDependencies": true,
+            "installYarnUsingApt": true,
+            "version": "lts",
+            "pnpmVersion": "latest",
+            "nvmVersion": "latest"
+        },
+        "ghcr.io/itsmechlark/features/redis-server:1": {
+            "version": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "Lokalise.i18n-ally",
+                "formulahendry.auto-rename-tag",
+                "formulahendry.auto-close-tag",
+                "onecentlin.laravel-blade",
+                "amiralizadeh9480.laravel-extra-intellisense",
+                "ryannaddy.laravel-artisan",
+                "esbenp.prettier-vscode",
+                "austenc.laravel-blade-spacer",
+                "recca0120.vscode-phpunit",
+                "mhutchie.git-graph",
+                "WakaTime.vscode-wakatime",
+                "laravel.vscode-laravel",
+                "GitLab.gitlab-workflow"
+            ],
+            "settings": {
+                "php.suggest.basic": false,
+                "php.validate.enable": true,
+                "php.validate.executablePath": "/usr/local/bin/php",
+                "intelephense.files.maxSize": 5000000,
+                "emmet.includeLanguages": {
+                    "blade": "html"
+                },
+                "phpunit.command": "vendor/bin/pest",
+                "phpunit.php": "" 
+            }
+        }
+    }
+}
